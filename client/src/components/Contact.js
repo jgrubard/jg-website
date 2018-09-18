@@ -9,7 +9,9 @@ class Contact extends Component {
     this.state = {
       email: '',
       message: '',
-      sent: false
+      sent: false,
+      // sent: true,
+      validEmail: true
     }
     this.sendEmail = this.sendEmail.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -24,8 +26,12 @@ class Contact extends Component {
 
   sendEmail() {
     const { email, message } = this.state;
-    this.sendDataToServer({ email, message });
-    this.setState({ email: '', message: '', sent: true });
+    if(email.indexOf('@') === -1) {
+      this.setState({ validEmail: false });
+    } else {
+      this.sendDataToServer({ email, message });
+      this.setState({ email: '', message: '', sent: true });
+    }
   }
 
   sendAgain() {
@@ -41,7 +47,7 @@ class Contact extends Component {
 
   render() {
     console.log(this.state)
-    const { email, message, sent } = this.state;
+    const { email, message, sent, validEmail } = this.state;
     const { onChange, sendEmail, sendAgain } = this;
     return (
       <div>
@@ -49,8 +55,10 @@ class Contact extends Component {
         {
           sent ? (
             <div style={styles.input}>
-              <h4 style={styles.title}>Thanks for the message!</h4>
-              <h4 style={styles.title}>I'll get back to you as soon as I can!</h4>
+              <div style={styles.thankYou}>
+                <h4 style={styles.title}>Thanks for the message!</h4>
+                <h4 style={styles.title}>I'll get back to you as soon as I can!</h4>
+              </div>
               <h5 style={styles.title}>~ Jeremy</h5>
               <Button
                 color='primary'
@@ -70,6 +78,9 @@ class Contact extends Component {
                 value={email}
                 onChange={onChange}
               />
+              { !validEmail && email &&
+                  <span style={styles.error}>Please enter a valid email address.</span>
+              }
               <Input
                 type='textarea'
                 label='Write your message here'
@@ -101,12 +112,19 @@ const styles = {
     textAlign: 'center'
   },
   input: {
-    width: '50%',
+    width: '60%',
     margin: '0 auto'
   },
   button: {
-    margin: '0 auto',
+    margin: '30 auto',
     display: 'flex',
     justifyContent: 'center'
+  },
+  error: {
+    fontSize: '14',
+    color: 'red'
+  },
+  thankYou: {
+    margin: '30 0'
   }
 }

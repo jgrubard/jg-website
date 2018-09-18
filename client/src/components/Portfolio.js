@@ -1,8 +1,15 @@
 import React from 'react';
+import PairUp from './PortfolioPages/PairUp';
+import BetaTogether from './PortfolioPages/BetaTogether';
 
 const Portfolio = () => {
   return (
-    <h2>This is my portfolio</h2>
+    <div>
+      <h2>This is my portfolio</h2>
+      <PairUp />
+      <hr />
+      <BetaTogether />
+    </div>
   );
 }
 
