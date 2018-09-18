@@ -46,7 +46,6 @@ class Contact extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { email, message, sent, validEmail } = this.state;
     const { onChange, sendEmail, sendAgain } = this;
     return (

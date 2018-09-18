@@ -1,6 +1,7 @@
 const app = require('express').Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+module.exports = app;
 
 app.post('/', (req, res, next) => {
   const { email, message } = req.body;
@@ -29,6 +30,6 @@ app.post('/', (req, res, next) => {
     console.log('Message sent: %s', info.messageId);
   });
 
-});
+  res.sendStatus(200);
 
-module.exports = app;
+});
