@@ -3,6 +3,9 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 module.exports = app;
 
+console.log(process.env.EMAIL);
+console.log(process.env.PASSWORD);
+
 app.post('/', (req, res, next) => {
   const { email, message } = req.body;
 
@@ -24,9 +27,7 @@ app.post('/', (req, res, next) => {
   };
   
   transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
+    if (error) return console.log(error);
     console.log('Message sent: %s', info.messageId);
   });
 

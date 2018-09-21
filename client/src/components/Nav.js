@@ -44,6 +44,9 @@ class Nav extends Component {
             </NavbarNav>
             <NavbarNav right>
               <NavItem>
+                <a href='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/Jeremy_Grubard.pdf' style={styles.resume} target='_blank'><Fa icon='resume' />Resume</a>
+              </NavItem>
+              <NavItem>
                 <a href="http://www.github.com/jgrubard" style={styles.icons} target='_blank'><Fa icon="github" /></a>
               </NavItem>
               <NavItem>
@@ -66,6 +69,11 @@ const styles = {
   icons: {
     margin: '0 10',
     fontSize: '25',
+    color: 'white'
+  },
+  resume: {
+    margin: '0 10',
+    fontSize: '18',
     color: 'white'
   }
 }
