@@ -2,10 +2,6 @@ const app = require('express').Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 module.exports = app;
-
-console.log(process.env.EMAIL);
-console.log(process.env.PASSWORD);
-
 app.post('/', (req, res, next) => {
   const { email, message } = req.body;
 
