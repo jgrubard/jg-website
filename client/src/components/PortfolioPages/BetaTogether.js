@@ -5,10 +5,15 @@ const BetaTogether = () => {
   return (
     <div>
       <h3>betaTogether</h3>
-      <ReactPlayer
-        url='https://www.youtube.com/watch?v=UEuhqUbGRHI'
-        controls={true}
-      />
+      <div className='player-wrapper'>
+        <ReactPlayer
+          className='react-player'
+          url='https://www.youtube.com/watch?v=UEuhqUbGRHI'
+          controls={true}
+          width='100%'
+          height='100%'
+        />
+      </div>
     </div>
   );
 }

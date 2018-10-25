@@ -29,6 +29,6 @@ export default App;
 
 const styles = {
   container: {
-    margin: '20 30'
+    margin: '70 30'
   }
 }

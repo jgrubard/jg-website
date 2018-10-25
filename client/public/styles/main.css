@@ -1,0 +1,73 @@
+/* from contact page */
+.title {
+  text-align: center;
+}
+
+.input {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.button {
+  margin: 30 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  font-size: 14;
+  color: red;
+}
+
+.thank-you {
+  margin: 30 0;
+}
+
+/* nav bar */
+.nav-bar {
+  background-color: rgb(0, 90, 255);
+}
+
+.link-padding {
+  padding: 10;
+}
+
+.icons {
+  margin: 0 10;
+  font-size: 25;
+  color: white;
+}
+
+.icons:hover {
+  color: lightgrey;
+}
+
+.resume {
+  margin: 0 10;
+  font-size: 18;
+  color: white;
+}
+
+.resume:hover {
+  color: lightgrey;
+}
+
+/* videos */
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+ 
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* media queries */
+@media (max-width:500px) {
+  .input {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

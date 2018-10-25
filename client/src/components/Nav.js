@@ -17,12 +17,30 @@ class Nav extends Component {
   }
 
   render() {
+    const screenWidth = window.innerWidth;
+    // const isMobile = window.innerWidth <= 500;
+    // console.log('width:', screenWidth, 'MOBILE:', isMobile);
     const url = location.hash.slice(1);
     const { onClick } = this;
     const { collapse } = this.state;
+    // const isMobile = typeof window.orientation !== 'undefined';
+    // return (
+    //   <div>
+    //     <div className={`nav-bar${ isMobile ? ' nav-bar-mobile' : ''}`}>
+    //       <Link to='/' className={`nav-brand link-padding${ isMobile ? ' nav-brand-mobile' : ''}`}><strong>Jeremy Grubard</strong></Link>
+    //     </div>
+    //   </div>
+    // );
+    // if(isMobile) {
+    //   return (
+    //     <div>
+    //       MOBILE
+    //     </div>
+    //   );
+    // }
     return (
       <div>
-        <Navbar style={styles.bgColor} dark expand='md'>
+        <Navbar className='nav-bar' dark expand='md' scrolling fixed='top'>
           <NavbarBrand href='/'>
             <strong>Jeremy Grubard</strong>
           </NavbarBrand>
@@ -30,27 +48,27 @@ class Nav extends Component {
           <Collapse isOpen={collapse} navbar>
             <NavbarNav left>
               <NavItem active={url === '/'}>
-                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/' onClick={onClick}>Home</NavLink>
               </NavItem>
               <NavItem active={url === '/portfolio'}>
-                <NavLink to='/portfolio'>Portfolio</NavLink>
+                <NavLink to='/portfolio' onClick={onClick}>Portfolio</NavLink>
               </NavItem>
               <NavItem active={url === '/about'}>
-                <NavLink to='/about'>About Me</NavLink>
+                <NavLink to='/about' onClick={onClick}>About Me</NavLink>
               </NavItem>
               <NavItem active={url === '/contact'}>
-                <NavLink to='/contact'>Contact</NavLink>
+                <NavLink to='/contact' onClick={onClick}>Contact</NavLink>
               </NavItem>
             </NavbarNav>
             <NavbarNav right>
               <NavItem>
-                <a href='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/Jeremy_Grubard.pdf' style={styles.resume} target='_blank'><Fa icon='resume' />Resume</a>
+                <a href='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/Jeremy_Grubard.pdf' className='resume' target='_blank'><Fa icon='resume' />Resume</a>
               </NavItem>
               <NavItem>
-                <a href="http://www.github.com/jgrubard" style={styles.icons} target='_blank'><Fa icon="github" /></a>
+                <a href="http://www.github.com/jgrubard" className='icons' target='_blank'><Fa icon="github" /></a>
               </NavItem>
               <NavItem>
-                <a href="http://www.linkedin.com/in/jgrubard" style={styles.icons} target='_blank'><Fa icon="linkedin" /></a>
+                <a href="http://www.linkedin.com/in/jgrubard" className='icons' target='_blank'><Fa icon="linkedin" /></a>
               </NavItem>
             </NavbarNav>
           </Collapse>
@@ -62,18 +80,18 @@ class Nav extends Component {
 
 export default Nav;
 
-const styles = {
-  bgColor: {
-    backgroundColor: 'darkgray'
-  },
-  icons: {
-    margin: '0 10',
-    fontSize: '25',
-    color: 'white'
-  },
-  resume: {
-    margin: '0 10',
-    fontSize: '18',
-    color: 'white'
-  }
-}
+// const styles = {
+//   bgColor: {
+//     backgroundColor: 'darkgray'
+//   },
+//   icons: {
+//     margin: '0 10',
+//     fontSize: '25',
+//     color: 'white'
+//   },
+//   resume: {
+//     margin: '0 10',
+//     fontSize: '18',
+//     color: 'white'
+//   }
+// }

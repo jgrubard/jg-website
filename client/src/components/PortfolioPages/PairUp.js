@@ -5,10 +5,15 @@ const PairUp = () => {
   return (
     <div>
       <h3>Pair Up!</h3>
-      <ReactPlayer
-        url='https://www.youtube.com/watch?v=oQXhNspw-pE'
-        controls={true}
-      />
+      <div className='player-wrapper'>
+        <ReactPlayer
+          className='react-player'
+          url='https://www.youtube.com/watch?v=oQXhNspw-pE'
+          controls={true}
+          width='100%'
+          height='100%'
+        />
+      </div>
     </div>
   );
 }
