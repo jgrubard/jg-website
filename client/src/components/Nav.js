@@ -17,27 +17,10 @@ class Nav extends Component {
   }
 
   render() {
-    const screenWidth = window.innerWidth;
-    // const isMobile = window.innerWidth <= 500;
-    // console.log('width:', screenWidth, 'MOBILE:', isMobile);
+    const isMobile = window.innerWidth <= 500;
     const url = location.hash.slice(1);
     const { onClick } = this;
     const { collapse } = this.state;
-    // const isMobile = typeof window.orientation !== 'undefined';
-    // return (
-    //   <div>
-    //     <div className={`nav-bar${ isMobile ? ' nav-bar-mobile' : ''}`}>
-    //       <Link to='/' className={`nav-brand link-padding${ isMobile ? ' nav-brand-mobile' : ''}`}><strong>Jeremy Grubard</strong></Link>
-    //     </div>
-    //   </div>
-    // );
-    // if(isMobile) {
-    //   return (
-    //     <div>
-    //       MOBILE
-    //     </div>
-    //   );
-    // }
     return (
       <div>
         <Navbar className='nav-bar' dark expand='md' scrolling fixed='top'>
@@ -48,16 +31,16 @@ class Nav extends Component {
           <Collapse isOpen={collapse} navbar>
             <NavbarNav left>
               <NavItem active={url === '/'}>
-                <NavLink to='/' onClick={onClick}>Home</NavLink>
+                <NavLink to='/' onClick={isMobile ? onClick : null}>Home</NavLink>
               </NavItem>
               <NavItem active={url === '/portfolio'}>
-                <NavLink to='/portfolio' onClick={onClick}>Portfolio</NavLink>
+                <NavLink to='/portfolio' onClick={isMobile ? onClick : null}>Portfolio</NavLink>
               </NavItem>
               <NavItem active={url === '/about'}>
-                <NavLink to='/about' onClick={onClick}>About Me</NavLink>
+                <NavLink to='/about' onClick={isMobile ? onClick : null}>About Me</NavLink>
               </NavItem>
               <NavItem active={url === '/contact'}>
-                <NavLink to='/contact' onClick={onClick}>Contact</NavLink>
+                <NavLink to='/contact' onClick={isMobile ? onClick : null}>Contact</NavLink>
               </NavItem>
             </NavbarNav>
             <NavbarNav right>

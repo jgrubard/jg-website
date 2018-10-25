@@ -52,13 +52,24 @@
   color: lightgrey;
 }
 
+/* projects */
+.project-container {
+  margin: 0 100;
+}
+
+.project-card {
+  background-color: rgba(76, 139, 255, 0.3);
+  padding: 20;
+  border-radius: 10px;
+}
+
 /* videos */
 .player-wrapper {
   position: relative;
-  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
 }
  
-.react-player {
+.video-player {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,5 +80,9 @@
   .input {
     width: 100%;
     margin: 0 auto;
+  }
+
+  .project-container {
+    margin: 0;
   }
 }

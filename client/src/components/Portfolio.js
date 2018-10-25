@@ -1,14 +1,19 @@
 import React from 'react';
 import PairUp from './PortfolioPages/PairUp';
 import BetaTogether from './PortfolioPages/BetaTogether';
+import MHIA from './PortfolioPages/MHIA';
+import J2A from './PortfolioPages/J2A';
 
 const Portfolio = () => {
   return (
-    <div>
-      <h2>This is my portfolio</h2>
+    <div className='project-container'>
       <PairUp />
       <hr />
       <BetaTogether />
+      <hr />
+      <J2A />
+      <hr />
+      <MHIA />
     </div>
   );
 }
