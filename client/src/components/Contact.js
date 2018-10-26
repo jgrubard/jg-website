@@ -18,6 +18,11 @@ class Contact extends Component {
     this.sendAgain = this.sendAgain.bind(this);
   }
 
+  componentDidMount(prevProps) {
+
+    document.body.scrollTop = 0;
+  }
+  
   sendDataToServer(data) {
     return axios.post('/api/email', data)
       .then(result => result.data)
@@ -57,7 +62,9 @@ class Contact extends Component {
     //   );
     // }
     return (
-      <div>
+      <div className='bg-container'>
+      {/* <div className='project-container'> */}
+      <div className='contact-card'>
         <h2 className='title'>Contact Me</h2>
         {
           sent ? (
@@ -107,6 +114,8 @@ class Contact extends Component {
             </div>
           )
         }
+      </div>
+      {/* </div> */}
       </div>
     );
   }

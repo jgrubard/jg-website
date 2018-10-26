@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 const BetaTogether = () => {
   return (
     <div className='project-card'>
-      <h3>beta≈Together</h3>
+      <h2 className='title'>beta≈Together</h2>
       <p>
         A web application for users to login/sign up, and connect with potential climbing partners while checked in to rock climbing gyms.
       </p>
@@ -34,3 +34,6 @@ const BetaTogether = () => {
 }
 
 export default BetaTogether;
+
+
+

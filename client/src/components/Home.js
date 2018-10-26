@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Home = () => {
-  return (
-    <div className='project-card'>
-    <h3>Welcome!</h3>
-    <p>
-      I'm Jeremy Grubard.
-    </p>
-    <p>
-      I'm a Full Stack Software Engineer with a background in graphic design. I'm passionate about building applications that fill a need, from the ground up. I'm currently seeking opportunities to join a team where I can apply my passion for code, and help to create amazing products.
-    </p>
-    <p>
-      I'm a rock climber determined to send the next route and to find the most efficient way to reach my goal. I approach my code with the same mindset. I welcome defeat, so that I can learn from it and use it as a stepping stone to success.
-    </p>
-    <p>
-      Proficient: JavaScript, Node.js, Express, Sequelize, React, React Native, Redux, Git, Github, HTML, CSS, Bootstrap
-    </p>
-    <p>
-      Knowledgeable: Heroku, ES6, Postgres, JWT, Socket.io, Stripe
-    </p>
-    </div>
-  );
+class Home extends Component {
+
+  componentDidMount() {
+    document.body.scrollTop = 0;
+  }
+
+  render() {
+    return (
+      <div className='bg-container'>
+      <div className='home-card'>
+        <img className='jeremy-photo' src='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/FullSizeRender-sqaure-crop.jpg' />
+        <div className='home-text'>
+          <h3>Welcome!</h3>
+          <p>
+            I'm Jeremy Grubard.
+          </p>
+          <p>
+            I'm a Full Stack Software Engineer with a background in graphic design. I'm passionate about building applications that fill a need, from the ground up. I'm currently seeking opportunities to join a team where I can apply my passion for code, and help to create amazing products.
+          </p>
+          <p>
+            I'm a rock climber determined to send the next route and to find the most efficient way to reach my goal. I approach my code with the same mindset. I welcome defeat, so that I can learn from it and use it as a stepping stone to success.
+          </p>
+          <p>
+            <i>Technologies:</i> JavaScript, Node.js, Express, Sequelize, PostgreSQL, React, React Native, Redux, Git, HTML, CSS
+          </p>
+        </div>
+      </div>
+      </div>
+    );
+  }
 }
 
 export default Home;

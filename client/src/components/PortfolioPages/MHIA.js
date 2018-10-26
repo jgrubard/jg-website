@@ -3,7 +3,7 @@ import React from 'react';
 const MHIA = () => {
   return (
     <div className='project-card'>
-      <h3>Margaret Hamilton Interstellar Academy</h3>
+      <h2 className='title'>Margaret Hamilton Interstellar Academy</h2>
       <p>
         A web React application created for a fictional academic institution, as a directory to manage its many campuses and all of its students.
       </p>
