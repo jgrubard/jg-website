@@ -266,6 +266,7 @@
   .project-container {
     margin: 0;
   }
+
   .home-card {
     display: block;
     margin: 0;
@@ -294,6 +295,18 @@
     /* width: 250; */
     /* margin: 5 5 20 5; */
   /* } */
+
+  .contact-card {
+    width: 90%;
+  }
+
+  .home-card {
+    margin: 20;
+  }
+
+  .project-card {
+    margin: 20;
+  }
 
   .intro-container {
     padding: 30 0;
