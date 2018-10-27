@@ -10,7 +10,6 @@ class Contact extends Component {
       email: '',
       message: '',
       sent: false,
-      // sent: true,
       validEmail: true
     }
     this.sendEmail = this.sendEmail.bind(this);
@@ -18,8 +17,7 @@ class Contact extends Component {
     this.sendAgain = this.sendAgain.bind(this);
   }
 
-  componentDidMount(prevProps) {
-
+  componentDidMount() {
     document.body.scrollTop = 0;
   }
   
@@ -53,94 +51,62 @@ class Contact extends Component {
   render() {
     const { email, message, sent, validEmail } = this.state;
     const { onChange, sendEmail, sendAgain } = this;
-    // const isMobileDevice = typeof window.orientation !== 'undefined';
-    // if(isMobileDevice) {
-    //   return (
-    //     <div>
-    //       <h1>I AM MOBILE</h1>
-    //     </div>
-    //   );
-    // }
     return (
       <div className='bg-container'>
-      {/* <div className='project-container'> */}
-      <div className='contact-card'>
-        <h2 className='title'>Contact Me</h2>
-        {
-          sent ? (
-            <div className='input'>
-              <div className='thank-you'>
-                <h4 className='title'>Thanks for the message!</h4>
-                <h4 className='title'>I'll get back to you as soon as I can!</h4>
+        <div className='contact-card'>
+          <h2 className='title'>Contact Me</h2>
+          {
+            sent ? (
+              <div className='input'>
+                <div className='thank-you'>
+                  <h4 className='title'>Thanks for the message!</h4>
+                  <h4 className='title'>I'll get back to you as soon as I can!</h4>
+                </div>
+                <h5 className='title'>~ Jeremy</h5>
+                <Button
+                  color='primary'
+                  onClick={sendAgain}
+                  className='button'
+                >
+                  Send Another Message
+                </Button>
               </div>
-              <h5 className='title'>~ Jeremy</h5>
-              <Button
-                color='primary'
-                onClick={sendAgain}
-                className='button'
-              >
-                Send Another Message
-              </Button>
-            </div>
-          ) : (
-            <div className='input'>
-              <Input
-                type='email'
-                label='Enter your email address'
-                icon='envelope'
-                name='email'
-                value={email}
-                onChange={onChange}
-              />
-              { !validEmail && email &&
-                  <span className='error'>Please enter a valid email address.</span>
-              }
-              <Input
-                type='textarea'
-                label='Write your message here'
-                icon='pencil'
-                name='message'
-                value={message}
-                onChange={onChange}
-              />
-              <Button
-                color='primary'
-                onClick={sendEmail}
-                disabled={!email || !message}
-                className='button'
-              >
-                Send Message
-              </Button>
-            </div>
-          )
-        }
-      </div>
-      {/* </div> */}
+            ) : (
+              <div className='input'>
+                <Input
+                  type='email'
+                  label='Enter your email address'
+                  icon='envelope'
+                  name='email'
+                  value={email}
+                  onChange={onChange}
+                />
+                { !validEmail && email &&
+                    <span className='error'>Please enter a valid email address.</span>
+                }
+                <Input
+                  type='textarea'
+                  label='Write your message here'
+                  icon='pencil'
+                  name='message'
+                  value={message}
+                  onChange={onChange}
+                />
+                <Button
+                  color='primary'
+                  onClick={sendEmail}
+                  disabled={!email || !message}
+                  className='button'
+                >
+                  Send Message
+                </Button>
+              </div>
+            )
+          }
+        </div>
       </div>
     );
   }
 }
 
 export default Contact;
-
-// const styles = {
-//   title: {
-//     textAlign: 'center'
-//   },
-//   input: {
-//     width: '60%',
-//     margin: '0 auto'
-//   },
-//   button: {
-//     margin: '30 auto',
-//     display: 'flex',
-//     justifyContent: 'center'
-//   },
-//   error: {
-//     fontSize: '14',
-//     color: 'red'
-//   },
-//   thankYou: {
-//     margin: '30 0'
-//   }
-// }

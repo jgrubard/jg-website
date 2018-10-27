@@ -45,31 +45,25 @@ class Intro extends Component {
     const { skipIntro } = this;
     return (
       <div className='intro-container bg-container'>
-        
         <div className='message-container'>
           { message && <p className='message-text'><strong>{ skipped ? welcomeMessage : message }</strong></p> }
         </div>
-
         {
-          skipped
-            ? (
-              <Link to='/home'>
-                <Button color='indigo' className='button button-enter'>
-                  Come on in
-                </Button>
-              </Link>
-            ) : (
-              <Button className='button button-enter' color='indigo' onClick={skipIntro}>
-                Skip
+          skipped ? (
+            <Link to='/about'>
+              <Button color='indigo' className='button button-enter'>
+                Come on in
               </Button>
-            )
+            </Link>
+          ) : (
+            <Button className='button button-enter' color='indigo' onClick={skipIntro}>
+              Skip
+            </Button>
+          )
         }
-
       </div>
-      
     );
   }
-
 }
 
 export default Intro;

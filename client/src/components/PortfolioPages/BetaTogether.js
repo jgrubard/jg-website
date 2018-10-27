@@ -1,6 +1,5 @@
 import React from 'react';
-// import ReactPlayer from 'react-player';
-import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player';
 
 const BetaTogether = () => {
   return (
@@ -16,17 +15,12 @@ const BetaTogether = () => {
         Check out the app in action!
       </p>
       <div className='player-wrapper'>
-        {/* <ReactPlayer
-          className='react-player'
+        <ReactPlayer
+          className='video-player'
           url='https://www.youtube.com/watch?v=UEuhqUbGRHI'
           controls={true}
           width='100%'
           height='100%'
-        /> */}
-        <YouTube
-          videoId='UEuhqUbGRHI'
-          className='video-player'
-          opts={{ width: '100%', height: '100%' }}
         />
       </div>
     </div>
