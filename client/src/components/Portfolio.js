@@ -11,13 +11,11 @@ class Portfolio extends Component {
   
   render() {
     return (
-      <div className='bg-container'>
-        <div className='project-container'>
-          <PairUp />
-          <BetaTogether />
-          <J2A />
-          <MHIA />
-        </div>
+      <div className='project-container'>
+        <PairUp />
+        <BetaTogether />
+        <J2A />
+        <MHIA />
       </div>
     );
   }

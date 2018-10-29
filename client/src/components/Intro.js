@@ -44,7 +44,7 @@ class Intro extends Component {
     const { message, welcomeMessage, skipped } = this.state;
     const { skipIntro } = this;
     return (
-      <div className='intro-container bg-container'>
+      <div className='intro-container'>
         <div className='message-container'>
           { message && <p className='message-text'><strong>{ skipped ? welcomeMessage : message }</strong></p> }
         </div>

@@ -8,7 +8,6 @@ class About extends Component {
 
   render() {
     return (
-      <div className='bg-container'>
       <div className='about-card'>
         <img className='jeremy-photo' src='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/FullSizeRender-sqaure-crop.jpg' />
         <div className='about-text'>
@@ -26,7 +25,6 @@ class About extends Component {
             <i>Technologies:</i> JavaScript, Node.js, Express, Sequelize, PostgreSQL, React, React Native, Redux, Git, HTML, CSS
           </p>
         </div>
-      </div>
       </div>
     );
   }
