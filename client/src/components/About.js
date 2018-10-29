@@ -8,8 +8,8 @@ class About extends Component {
 
   render() {
     return (
-      <div className='about-card'>
-        <h3 className='title'>Welcome</h3>
+      <div className='about-card card'>
+        <h2 className='title'>Welcome</h2>
         <div className='about-flex'>
           <img className='jeremy-photo' src='https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/FullSizeRender-sqaure-crop.jpg' />
           <div className='about-text'>

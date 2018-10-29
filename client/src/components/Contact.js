@@ -10,7 +10,9 @@ class Contact extends Component {
       email: '',
       message: '',
       sent: false,
-      validEmail: true
+      validEmail: true,
+      row: 5,
+      height: 164
     }
     this.sendEmail = this.sendEmail.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -46,13 +48,27 @@ class Contact extends Component {
     const { name, value } = ev.target;
     change[name] = value;
     this.setState(change);
+    // console.log(ev.target.scrollTop, ev.target.clientHeight, ev.target.scrollHeight);
+    // console.log('client height', ev.target.clientHeight);
+    this.calcRow(ev.target.scrollHeight);
+  }
+
+  calcRow(scrollHeight) {
+    const { height, row } = this.state;
+    if(scrollHeight > height) {
+      this.setState({ row: row + 1, height: scrollHeight });
+    } else if(height < height) {
+      this.setState({ row: row - 1, height: scrollHeight });
+    }
+    // console.log('height:', scrollHeight, 'state height:', height, 'state rows:', row);
   }
 
   render() {
-    const { email, message, sent, validEmail } = this.state;
+    const { email, message, sent, validEmail, row } = this.state;
     const { onChange, sendEmail, sendAgain } = this;
+    const isMobile = window.innerWidth <= 500;
     return (
-      <div className='contact-card'>
+      <div className='contact-card card'>
         <h2 className='title'>Contact Me</h2>
         {
           sent ? (
@@ -90,6 +106,7 @@ class Contact extends Component {
                 name='message'
                 value={message}
                 onChange={onChange}
+                rows={isMobile ? 5 : row < 15 ? row : 15}
               />
               <Button
                 color='primary'

@@ -6,8 +6,11 @@
   margin-bottom: auto;
 }
 
+.card {
+  background-color: white;
+}
+
 .about-card {
-  background-color: rgb(207, 221, 240);
   padding: 20;
   border-radius: 10px;
   margin: 0 200;
@@ -46,9 +49,21 @@ body {
   font-size: 65;
 }
 
+.cursor {
+  font-size: 65;
+}
+
+.cursor-visible {
+  color: rgb(0, 0, 0);
+}
+
+.cursor-invisible {
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
 /* from contact page */
 .title {
-  /* display: block; */
   margin-top: -40;
   margin-bottom: 20;
   padding: 10;
@@ -73,7 +88,6 @@ body {
 }
 
 .contact-card {
-  background-color: rgb(207, 221, 240);
   padding: 20;
   border-radius: 10px;
   margin: auto;
@@ -132,7 +146,6 @@ body {
 }
 
 .project-card {
-  background-color: rgb(207, 221, 240);
   padding: 20;
   border-radius: 10px;
   margin-bottom: 40;
@@ -223,17 +236,12 @@ body {
   }
 
   .about-card {
-    margin: 0 20;
+    margin: 0 20 20 20;
   }
 
   .about-flex {
     display: block;
   }
-
-  /* .jeremy-photo {
-    margin-left: auto;
-    margin-right: auto;
-  } */
 
   .project-card {
     margin: 0 20 40 20;
@@ -275,15 +283,8 @@ body {
   }
 
   .title {
-    /* margin-top: -40; */
-    /* padding: 10; */
     font-size: 25px;
     margin-left: 5%;
     margin-right: 5%;
-    /* border-radius: 10px; */
-    /* font-weight: bold; */
-    /* background-color:  rgb(50, 96, 180); */
-    /* text-align: center; */
-    /* color: white; */
   }
 }

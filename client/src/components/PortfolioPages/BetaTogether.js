@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 
 const BetaTogether = () => {
   return (
-    <div className='project-card'>
+    <div className='project-card card'>
       <h2 className='title'>beta≈Together</h2>
       <p>
         A web application for users to login/sign up, and connect with potential climbing partners while checked in to rock climbing gyms.

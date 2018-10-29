@@ -8,9 +8,11 @@ class Intro extends Component {
     this.state = {
       message: '',
       welcomeMessage: '',
+      cursor: true,
       skipped: false
     }
     this.skipIntro = this.skipIntro.bind(this);
+    this.timerID = 0;
   }
 
   componentDidMount() {
@@ -21,6 +23,17 @@ class Intro extends Component {
     setTimeout(() => {
       this.createMessage(welcomeMessage);
     }, 400);
+    this.flashingCursor();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  flashingCursor() {
+    this.timerID = setInterval(() => {
+      this.setState({ cursor: !this.state.cursor });
+    }, 600)
   }
 
   createMessage(input, message = '') {
@@ -29,7 +42,7 @@ class Intro extends Component {
     }
     setTimeout(() => {
       message += input[0];
-      this.setState({ message });
+      this.setState({ message: message });
       this.createMessage(input.slice(1), message);
       message.length === this.state.welcomeMessage.length && this.setState({ skipped: true });
     }, 60);
@@ -38,15 +51,26 @@ class Intro extends Component {
   skipIntro(ev) {
     ev.preventDefault();
     this.setState({ message: this.state.welcomeMessage, skipped: true });
+    this.setState({ loop: false });
   }
 
   render() {
-    const { message, welcomeMessage, skipped } = this.state;
+    const { message, welcomeMessage, cursor, skipped } = this.state;
     const { skipIntro } = this;
     return (
       <div className='intro-container'>
         <div className='message-container'>
-          { message && <p className='message-text'><strong>{ skipped ? welcomeMessage : message }</strong></p> }
+          {
+            message && 
+              <div>
+                <span className='message-text'>
+                  <strong>
+                    {skipped ? welcomeMessage : message}
+                  </strong>
+                </span>
+                <span className={`cursor${ cursor ? ' cursor-visible' : ' cursor-invisible'}`}>|</span>
+              </div>
+          }
         </div>
         {
           skipped ? (
