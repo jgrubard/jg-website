@@ -1,3 +1,7 @@
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
 .jeremy-photo {
   height: 400px;
   width: auto;
@@ -13,7 +17,7 @@
 .about-card {
   padding: 20;
   border-radius: 10px;
-  margin: 0 200;
+  margin: 0 200 20 200;
   box-shadow: 0px 0px 15px rgb(156, 156, 156);
 }
 
@@ -31,7 +35,8 @@
 }
 
 body {
-  background-image: url('https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/abstract-art-background-289649.jpg');
+  /* background-image: url('https://s3.us-east-2.amazonaws.com/jeremy-grubard-website/abstract-art-background-289649.jpg'); */
+  background-image: linear-gradient(to right, white , rgb(104, 138, 201));
   background-size: cover;
   background-attachment: fixed;
   padding-top: 100px;
@@ -41,7 +46,7 @@ body {
   color: white;
   margin: 50 0 50 0;
   height: 200px;
-  text-shadow: 0px 0px 12px white;
+  /* text-shadow: 0px 0px 12px white; */
 }
 
 .message-text {
@@ -119,6 +124,18 @@ body {
   color: white;
 }
 
+.icons-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icons-about {
+  margin: 0 10;
+  flex: 1;
+  font-size: 30;
+  color :rgb(40, 100, 190);
+}
+
 .icons:hover {
   transform: scale(1.2);
   transition-duration: 500ms;
@@ -130,14 +147,25 @@ body {
   color: white;
 }
 
-.pdf-page {
-  background-color: black;
-  padding: 50px;
-}
-
 .resume:hover {
   transform: scale(1.1);
   transition-duration: 500ms;
+}
+
+.resume-about {
+  margin: 0 10;
+  flex: 1;
+  font-size: 22;
+  color: rgb(40, 100, 190);
+}
+
+.icons-flex-container > a:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.pdf-page {
+  background-color: black;
+  padding: 50px;
 }
 
 /* projects */
@@ -173,7 +201,7 @@ body {
 
 @media (max-width: 1150px) {
   .about-card {
-    margin: 0 100;
+    margin: 0 100 20 100;
   }
 
   .jeremy-photo {
@@ -185,7 +213,7 @@ body {
 
 @media (max-width: 1000px) {
   .about-card {
-    margin: 0 50;
+    margin: 0 50 20 50;
   }
 
   .jeremy-photo {
@@ -208,11 +236,16 @@ body {
 
   .about-card {
     display: block;
-    margin: 0 20;
+    margin: 0 20 20 20;
   }
 
   .about-flex {
     display: block;
+  }
+
+  .project-card {
+    margin: 0 20 40 20;
+    /* margin: T R B L; */
   }
 
   .jeremy-photo {
@@ -241,11 +274,6 @@ body {
 
   .about-flex {
     display: block;
-  }
-
-  .project-card {
-    margin: 0 20 40 20;
-    /* margin: T R B L; */
   }
 
   .intro-container {

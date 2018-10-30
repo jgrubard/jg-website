@@ -8,8 +8,7 @@ const BetaTogether = () => {
       <p>
         A web application for users to login/sign up, and connect with potential climbing partners while checked in to rock climbing gyms.
       </p>
-      <a href='https://www.github.com/jgrubard/stackathon-climbing-app'>Github Repo</a>
-      <br />
+      <a href='https://www.github.com/jgrubard/stackathon-climbing-app' target='_blank'>Github Repo</a>
       <br />
       <p>
         Check out the app in action!

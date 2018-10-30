@@ -49,7 +49,10 @@ class Contact extends Component {
     change[name] = value;
     this.setState(change);
     // console.log(ev.target.scrollTop, ev.target.clientHeight, ev.target.scrollHeight);
-    // console.log('client height', ev.target.clientHeight);
+    console.log('line height', ev);
+    // console.log(window.getComputedStyle(ev.target).overflowY)
+    // console.log(window.getComputedStyle(ev.target).overflowY === 'visible');
+    // console.log(window.getComputedStyle(ev.target).overflowY !== 'hidden');
     this.calcRow(ev.target.scrollHeight);
   }
 
@@ -60,7 +63,12 @@ class Contact extends Component {
     } else if(height < height) {
       this.setState({ row: row - 1, height: scrollHeight });
     }
-    // console.log('height:', scrollHeight, 'state height:', height, 'state rows:', row);
+    console.log('scrollheight:', scrollHeight);
+    console.log('state height:', height);
+    console.log('state rows:', row);
+    // console.log(window.getComputedStyle(element).overflowY === 'visible');
+    // console.log(window.getComputedStyle(element).overflowY !== 'hidden');
+
   }
 
   render() {

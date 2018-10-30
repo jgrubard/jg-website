@@ -75,12 +75,12 @@ class Intro extends Component {
         {
           skipped ? (
             <Link to='/about'>
-              <Button color='indigo' className='button button-enter'>
+              <Button color='amber' className='button button-enter'>
                 Come on in
               </Button>
             </Link>
           ) : (
-            <Button className='button button-enter' color='indigo' onClick={skipIntro}>
+            <Button className='button button-enter' color='amber' onClick={skipIntro}>
               Skip
             </Button>
           )

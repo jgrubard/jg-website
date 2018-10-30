@@ -7,9 +7,8 @@ const J2A = () => {
       <p>
         A faux e-commerce site where customers can browse a catalogue of products and add items to a cart. Once a customer logs in or signs up for a new account, their cart carries over to their account. Customers can proceed to purchase what's in their cart using Stripe.js, and email confirmations are sent out using Nodemailer.js. 
       </p>
-      <a href='https://www.j2a-widgets.herokuapp.com'>Deployed Application</a>
-      <br/>
-      <a href='https://www.github.com/jgrubard/grace-shopper'>Github Repo</a>
+      <a href='https://www.j2a-widgets.herokuapp.com' target='_blank'>Deployed Application</a>
+      <a href='https://www.github.com/jgrubard/grace-shopper' target='_blank'>Github Repo</a>
     </div>
   );
 }
