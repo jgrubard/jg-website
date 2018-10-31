@@ -44,16 +44,74 @@ class Contact extends Component {
   }
 
   onChange(ev) {
-    const change = {}
+    const change = {};
     const { name, value } = ev.target;
     change[name] = value;
     this.setState(change);
     // console.log(ev.target.scrollTop, ev.target.clientHeight, ev.target.scrollHeight);
-    console.log('line height', ev);
+    // console.log('scroll height', ev.target.scrollHeight);
+    // console.log('line height', ev.target.lineHeight);
+    // console.log(ev.target.value.length);
+    // console.log('scroll width', ev.target.scrollWidth);
+    // console.log('j width:', 'j'.clientWidth);
+
+    // const charWidth = 7;
+
+    // console.log(value.length * charWidth, ev.target.clientWidth);
+
+    let spl = value.split('\n');
+    // console.log(spl.length);
+    let rows = 0;
+    spl.forEach((wrappedSentence, i, arr) => {
+      let pixelWidth = wrappedSentence.length * 6;
+      // console.log('para:', wrappedSentence.length);
+      let newRows = 0;
+      const width = ev.target.clientWidth;
+      while(pixelWidth > width) {
+        pixelWidth -= width;
+        newRows++;
+      }
+      rows += newRows;
+      // console.log()
+    });
+    // console.log(rows + spl.length);
+    const allRows = rows + spl.length;
+    // this.setState({ row: rows + spl.length });
+    this.setState({ row: allRows > 5 ? allRows : 5 });
+
+
+    // console.log(ev.target.attributes)
+
+    // const attr = ev.target.attributes;
+
+    // for(let i = 0; i < attr.length; i++) {
+      // console.log(i)
+      // console.log('width:', attr[i].clientWidth);
+    // }
+
+
     // console.log(window.getComputedStyle(ev.target).overflowY)
     // console.log(window.getComputedStyle(ev.target).overflowY === 'visible');
     // console.log(window.getComputedStyle(ev.target).overflowY !== 'hidden');
-    this.calcRow(ev.target.scrollHeight);
+
+    // this.calcRow(ev.target.scrollHeight);
+
+    // const textArea = ev.target.attributes;
+    // const textArea = ev.onKeyDown();
+
+    // console.log(value.charCodeAt(value[value.length - 1]) === 10);
+
+    // if(value.charCodeAt(value[value.length - 1]) === 10) {
+    //   console.log('enter');
+    // }
+
+
+    // console.log(textArea);
+
+    // let spl = value.split('\n');
+    // console.log(spl.length);
+
+
   }
 
   calcRow(scrollHeight) {
@@ -63,9 +121,10 @@ class Contact extends Component {
     } else if(height < height) {
       this.setState({ row: row - 1, height: scrollHeight });
     }
-    console.log('scrollheight:', scrollHeight);
-    console.log('state height:', height);
-    console.log('state rows:', row);
+    // console.log('scrollheight:', scrollHeight);
+    // console.log('state height:', height);
+    // console.log('state rows:', row);
+
     // console.log(window.getComputedStyle(element).overflowY === 'visible');
     // console.log(window.getComputedStyle(element).overflowY !== 'hidden');
 
