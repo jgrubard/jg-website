@@ -11,7 +11,7 @@ class Contact extends Component {
       message: '',
       sent: false,
       validEmail: true,
-      row: 5,
+      rows: 5,
       height: 164
     }
     this.sendEmail = this.sendEmail.bind(this);
@@ -48,30 +48,30 @@ class Contact extends Component {
     const { name, value } = ev.target;
     change[name] = value;
     this.setState(change);
-
     this.calcRows(value, ev.target.clientWidth)
   }
 
   calcRows(input, width) {
+    const approxCharWidth = 7.6;
+    const margin = 40;
     let splitOnEnter = input.split('\n');
-
     let rows = 0;
     splitOnEnter.forEach(unbrokenLine => {
-      let pixelWidth = unbrokenLine.length * 6;
-      let newRows = 0;
-      // const width = ev.target.clientWidth;
+      let pixelWidth = (unbrokenLine.length * approxCharWidth) - margin;
+      let tempRows = 0;
       while(pixelWidth > width) {
         pixelWidth -= width;
-        newRows++;
+        tempRows++;
       }
-      rows += newRows;
+      rows += tempRows;
     });
+    // console.log(width, rows);
     const allRows = rows + splitOnEnter.length;
-    this.setState({ row: allRows > 5 ? allRows : 5 });
+    this.setState({ rows: allRows > 5 ? allRows : 5 });
   }
 
   render() {
-    const { email, message, sent, validEmail, row } = this.state;
+    const { email, message, sent, validEmail, rows } = this.state;
     const { onChange, sendEmail, sendAgain } = this;
     const isMobile = window.innerWidth <= 500;
     return (
@@ -113,7 +113,7 @@ class Contact extends Component {
                 name='message'
                 value={message}
                 onChange={onChange}
-                rows={isMobile ? 5 : row < 15 ? row : 15}
+                rows={rows}
               />
               <Button
                 color='primary'
