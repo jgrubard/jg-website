@@ -48,86 +48,26 @@ class Contact extends Component {
     const { name, value } = ev.target;
     change[name] = value;
     this.setState(change);
-    // console.log(ev.target.scrollTop, ev.target.clientHeight, ev.target.scrollHeight);
-    // console.log('scroll height', ev.target.scrollHeight);
-    // console.log('line height', ev.target.lineHeight);
-    // console.log(ev.target.value.length);
-    // console.log('scroll width', ev.target.scrollWidth);
-    // console.log('j width:', 'j'.clientWidth);
 
-    // const charWidth = 7;
+    this.calcRows(value, ev.target.clientWidth)
+  }
 
-    // console.log(value.length * charWidth, ev.target.clientWidth);
+  calcRows(input, width) {
+    let splitOnEnter = input.split('\n');
 
-    let spl = value.split('\n');
-    // console.log(spl.length);
     let rows = 0;
-    spl.forEach((wrappedSentence, i, arr) => {
-      let pixelWidth = wrappedSentence.length * 6;
-      // console.log('para:', wrappedSentence.length);
+    splitOnEnter.forEach(unbrokenLine => {
+      let pixelWidth = unbrokenLine.length * 6;
       let newRows = 0;
-      const width = ev.target.clientWidth;
+      // const width = ev.target.clientWidth;
       while(pixelWidth > width) {
         pixelWidth -= width;
         newRows++;
       }
       rows += newRows;
-      // console.log()
     });
-    // console.log(rows + spl.length);
-    const allRows = rows + spl.length;
-    // this.setState({ row: rows + spl.length });
+    const allRows = rows + splitOnEnter.length;
     this.setState({ row: allRows > 5 ? allRows : 5 });
-
-
-    // console.log(ev.target.attributes)
-
-    // const attr = ev.target.attributes;
-
-    // for(let i = 0; i < attr.length; i++) {
-      // console.log(i)
-      // console.log('width:', attr[i].clientWidth);
-    // }
-
-
-    // console.log(window.getComputedStyle(ev.target).overflowY)
-    // console.log(window.getComputedStyle(ev.target).overflowY === 'visible');
-    // console.log(window.getComputedStyle(ev.target).overflowY !== 'hidden');
-
-    // this.calcRow(ev.target.scrollHeight);
-
-    // const textArea = ev.target.attributes;
-    // const textArea = ev.onKeyDown();
-
-    // console.log(value.charCodeAt(value[value.length - 1]) === 10);
-
-    // if(value.charCodeAt(value[value.length - 1]) === 10) {
-    //   console.log('enter');
-    // }
-
-
-    // console.log(textArea);
-
-    // let spl = value.split('\n');
-    // console.log(spl.length);
-
-
-  }
-
-  calcRow(scrollHeight) {
-    const { height, row } = this.state;
-    if(scrollHeight > height) {
-      this.setState({ row: row + 1, height: scrollHeight });
-    } else if(height < height) {
-      this.setState({ row: row - 1, height: scrollHeight });
-    }
-    // console.log('scrollheight:', scrollHeight);
-    // console.log('state height:', height);
-    // console.log('state rows:', row);
-
-    // console.log(window.getComputedStyle(element).overflowY === 'visible');
-    // console.log(window.getComputedStyle(element).overflowY !== 'hidden');
-
   }
 
   render() {
