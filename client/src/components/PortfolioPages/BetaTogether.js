@@ -8,6 +8,9 @@ const BetaTogether = () => {
       <p>
         A web application for users to login/sign up, and connect with potential climbing partners while checked in to rock climbing gyms.
       </p>
+      <p>
+        <i>Technologies:</i> Express, Sequelize, PostgreSQL, React/Redux, Socket.io, JWT
+      </p>
       <a href='https://www.github.com/jgrubard/stackathon-climbing-app' target='_blank'>Github Repo</a>
       <br />
       <p>

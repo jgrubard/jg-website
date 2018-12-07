@@ -3,6 +3,7 @@ import PairUp from './PortfolioPages/PairUp';
 import BetaTogether from './PortfolioPages/BetaTogether';
 import MHIA from './PortfolioPages/MHIA';
 import J2A from './PortfolioPages/J2A';
+import Groop from './PortfolioPages/Groop';
 
 class Portfolio extends Component {
   componentDidMount() {
@@ -12,6 +13,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div className='project-container'>
+        <Groop />
         <PairUp />
         <BetaTogether />
         <J2A />
